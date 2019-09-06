@@ -1,0 +1,207 @@
+/**
+* Main style for all sub-pages
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lobster|Oswald');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #404040;
+    color: #d3d3d3;
+    font-family: Oswald, sans-serif;
+    margin: 0;
+    /* display: grid;
+    grid-template:
+    "aside main" 1fr
+    "aside footer" auto / auto 1fr; */
+}
+
+#root {
+    height: 100%;
+    display: grid;
+    grid-template:
+    "aside main" 1fr
+    "aside footer" auto / auto 1fr;
+}
+
+h2,
+h3 {
+    margin: 0;
+}
+
+a {
+    color: #d3d3d3;
+}
+
+.header-nav a {
+    text-decoration: none;
+    font-size: 24px;
+    background-color: #dc6400;
+    display: block;
+    padding: 1em;
+}
+
+.header-nav a:hover {
+    color: #dc6400;
+    background-color: #d3d3d3;
+}
+
+.header-nav a.current-nav {
+    background-color: #404040;
+}
+
+.main-aside {
+    background-color: #202020;
+    box-shadow: 0 0 5px #202020;
+    grid-area: aside;
+}
+
+.aside-header {
+    display: grid;
+    padding: 0.5em;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1em;
+}
+
+.header-img {
+    grid-column: 1 / 2;
+    box-shadow: 0 0 5px #202020;
+}
+
+.header-title,
+.header-sub-title {
+    display: block;
+    font-weight: bold;
+    font-family: Lobster, sans-serif;
+    color: #dc6400;
+    text-shadow: 3px 3px 5px #202020;
+}
+
+.header-title {
+    grid-column: 2 / 3;
+    font-size: 64px;
+}
+
+.header-sub {
+    grid-column: 1 / 3;
+}
+
+.header-sub-title {
+    font-size: 32px;
+}
+
+.header-slogan {
+    font-family: Lobster, sans-serif;
+    color: #d3d3d3;
+    font-style: italic;
+}
+
+.main-footer {
+    grid-area: footer;
+    font-family: Lobster, sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    background-color: #202020;
+    padding: 5em;
+    box-shadow: 0 0 5px #202020;
+}
+
+.footer-name,
+.footer-row {
+    display: block;
+}
+
+.footer-name {
+    font-size: 1.2rem;
+}
+
+.main-content {
+    margin: 5em 5em 2em;
+}
+
+.main-content h1 {
+    font-family: Lobster, sans-serif;
+    font-size: 36px;
+    margin: 0 1em 1em 0;
+    border-bottom: 5px solid #dc6400;
+    padding-bottom: 0.1em;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 2em 0.5em 1.5em 0;
+    border-left: 5px solid #dc6400;
+    padding-left: 0.5em;
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+}
+
+.question {
+    display: inline-block;
+    border-bottom: 1px solid #dc6400;
+}
+
+.question::before {
+    content: "?";
+    color: #dc6400;
+    margin-right: 0.5rem;
+}
+
+.main-content p {
+    width: 60%;
+    margin: 0 0 2em;
+    line-height: 1.7em;
+    text-align: justify;
+}
+
+.figure-float {
+    margin: 0 1em 0.8em 0;
+    float: left;
+}
+
+.figure-simple {
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.image {
+    box-shadow: 0 0 5px #202020;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.main-content ul {
+    padding-left: 1em;
+}
+
+.byline {
+    float: right;
+    background-color: #202020;
+    padding: 1em;
+    width: 50%;
+    box-shadow: 0 0 5px #202020;
+}
+
+.byline-mugshot {
+    float: left;
+    margin-right: 1em;
+}
+
+.byline-name {
+    font-family: Lobster, sans-serif;
+    font-style: italic;
+}
+
+.byline p {
+    width: 100%;
+}
