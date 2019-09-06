@@ -5,16 +5,16 @@ import Home from "./Home";
 import Reports from "./Reports"
 
 function App() {
-  return (
-      <Router>
-              <Aside />
+    return (
+        <Router>
+            <Aside />
 
-              <Route exact path="/" component={Home} />
-              <Route path="/reports/" component={Reports} />
+            <Route exact path="/" component={Home} />
+            <Route path="/reports/" component={Reports} />
 
-              <Footer />
-      </Router>
-  );
+            <Footer />
+        </Router>
+    );
 }
 
 function Aside() {
