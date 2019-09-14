@@ -19,7 +19,7 @@ function Index() {
             <h1>Rapporter</h1>
             <ul>
                 { content.map((_, n) => (
-                    <li>
+                    <li key={n}>
                         <Link to={ "reports/week/" + (n + 1) }>Vecka { n + 1 }</Link>
                     </li>
                 )) }
