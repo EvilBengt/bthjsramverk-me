@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from "../img/logo9090.png"
 import Home from "./Home";
-import Reports from "./Reports"
+import Reports from "./Reports";
+import RegForm from "./RegForm";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
 
             <Route exact path="/" component={Home} />
             <Route path="/reports/" component={Reports} />
+            <Route path="/register/" component={RegForm} />
 
             <Footer />
         </Router>
@@ -31,6 +33,7 @@ function Aside() {
             <nav className="header-nav nav">
                 <Link to="/">Hem</Link>
                 <Link to="/reports">Rapporter</Link>
+                <Link to="/register">Registrera</Link>
             </nav>
         </aside>
     );
