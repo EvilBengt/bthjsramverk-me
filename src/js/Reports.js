@@ -74,7 +74,9 @@ const content = [
         <Readme />
     </section>,
     <section>
-        <a href="https://github.com/EvilBengt/bthjsramverk-me">Länk till GitHub-repo</a>
+        <p>
+            <a href="https://github.com/EvilBengt/bthjsramverk-me">Länk till GitHub-repo</a>
+        </p>
         <p>
             Jag ville få formuläret att bli lite lagom intressant samtidigt
             som det smälter in i sidan och passar till resten av designen.
