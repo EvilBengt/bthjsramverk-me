@@ -31,9 +31,11 @@ function RegForm() {
                             onBlur={ e => e.target.classList.add("edited") }
                         />
                     </label>
-                    <button type="submit" className="button">
-                        Gå vidare
-                    </button>
+                    <div className="form-footer">
+                        <button type="submit" className="button button-submit">
+                            Gå vidare
+                        </button>
+                    </div>
                 </form>
             </article>
         </main>

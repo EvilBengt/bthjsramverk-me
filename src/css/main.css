@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lobster|Oswald');
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
@@ -239,6 +243,11 @@ figcaption {
     border-color: #05c46b;
 }
 
+.form-footer {
+    width: 20rem;
+    display: grid;
+    grid: "left _ right" auto / auto 1fr auto;
+}
 
 .button {
     font-size: 1.2rem;
@@ -252,15 +261,10 @@ figcaption {
     box-shadow: 1px 1px #222;
 }
 
-.fieldButton {
-    padding: 0.5rem 1rem;
-    position: absolute;
-    transform: translateX(-100%);
-    box-shadow: none;
-    border-radius: 0 0.2rem 0.2rem 0;
+.button-submit {
+    grid-area: right;
 }
 
-.calendar {
-    width: 20rem;
-    background-color: #222;
+.form:valid .button-submit {
+    background-color: #05c46b;
 }
