@@ -72,6 +72,31 @@ const content = [
     <section>
         <a href="https://github.com/EvilBengt/bthjsramverk-me">Länk till GitHub repo</a><br /><br />
         <Readme />
+    </section>,
+    <section>
+        <a href="https://github.com/EvilBengt/bthjsramverk-me">Länk till GitHub-repo</a>
+        <p>
+            Jag ville få formuläret att bli lite lagom intressant samtidigt
+            som det smälter in i sidan och passar till resten av designen.
+            Självklart har jag till exempel fält på var sin "rad" osv.
+        </p>
+        <p>
+            Nästan den enda funktionen jag gillar hos Chromes datumväljare
+            är att man kan klicka på den och börja skriva direkt. Man behöver
+            alltså inte bläddra igenom en massa menyer och klicka hit och dit,
+            om man inte vill.
+        </p>
+        <p>
+            Eftersom man ändå skriver allt annat i formuläret med tangentbordet
+            tycker jag att någon slags grafisk väljare kan känns lite klumpig.
+            Tanken är att göra det så enkelt och tydligt som möjligt. Därför har
+            jag endast ett enkel text-fält för datuminmatning.
+        </p>
+        <p>
+            Självklart får dock användaren så mycket hjälp på vägen som möjligt.
+            Bindestreck för att separera år-månad och månad-dag fylls i automatiskt,
+            och formatet valideras vid varje inmatning, även copy-paste.
+        </p>
     </section>
 ];
 
