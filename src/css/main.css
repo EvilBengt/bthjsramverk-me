@@ -206,3 +206,61 @@ figcaption {
 .byline p {
     width: 100%;
 }
+
+.form {
+    width: auto;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.input {
+    font-size: 1.2rem;
+    font-family: inherit;
+    padding: 0.5rem;
+    width: 20rem;
+    border-radius: 0.2rem;
+    border: none;
+    border-left: 1rem solid #dc6400;
+    background-color: #eee;
+}
+
+:focus {
+    box-shadow: 0 0 5px 1px #0fbcf9;
+}
+
+.edited:invalid {
+    border-color: #ff3f34;
+}
+
+.edited:valid {
+    border-color: #05c46b;
+}
+
+
+.button {
+    font-size: 1.2rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem 2rem;
+    background-color: #dc6400;
+    color: #eee;
+    text-shadow: 1px 1px #222;
+    box-shadow: 1px 1px #222;
+}
+
+.fieldButton {
+    padding: 0.5rem 1rem;
+    position: absolute;
+    transform: translateX(-100%);
+    box-shadow: none;
+    border-radius: 0 0.2rem 0.2rem 0;
+}
+
+.calendar {
+    width: 20rem;
+    background-color: #222;
+}
