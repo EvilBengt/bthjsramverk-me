@@ -10,8 +10,15 @@ class Login extends React.Component {
             },
             active: false,
             login: "",
-            password: ""
+            password: "",
+            loggedIn: false
         };
+
+        api.subscribeToOnTokenChanged(() => {
+            this.setState(this.state.with({
+                loggedIn: api.getToken() !== undefined
+            }));
+        });
     }
 
     render() {
@@ -19,10 +26,12 @@ class Login extends React.Component {
     }
 
     Collapsed() {
-        if (api.token) {
+        if (this.state.loggedIn) {
             return (
                 <button type="button" className="login"
-                    onClick={ () => api.token = undefined }
+                    onClick={ () => this.setState(this.state.with({
+                        loggedIn: false
+                    })) }
                 >
                     Logga ut
                 </button>
@@ -93,7 +102,7 @@ class Login extends React.Component {
         })(res => {
             if (res.ok) {
                 res.json().then(json => {
-                    api.token = json.data.token;
+                    api.setToken(json.data.token);
                     this.setState(this.state.with({
                         active: false
                     }));
