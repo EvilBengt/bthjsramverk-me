@@ -35,6 +35,9 @@ function Aside() {
             <nav className="header-nav nav">
                 <Link to="/">Hem</Link>
                 <Link to="/reports">Rapporter</Link>
+                <div className="sub-nav">
+                    <Link to="/reports/edit">Administrera</Link>
+                </div>
                 <Link to="/register">Registrera</Link>
             </nav>
         </aside>
