@@ -220,6 +220,10 @@ figcaption {
     margin-bottom: 2rem;
 }
 
+.input-label-simple {
+    display: block;
+}
+
 .input {
     font-size: 1.2rem;
     font-family: inherit;
@@ -239,7 +243,7 @@ figcaption {
     border-color: #ff3f34;
 }
 
-.edited:valid {
+.input:valid {
     border-color: #05c46b;
 }
 
@@ -259,6 +263,12 @@ figcaption {
     color: #eee;
     text-shadow: 1px 1px #222;
     box-shadow: 1px 1px #222;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #dc6400;
+    background-color: #d3d3d3;
 }
 
 .button-submit {
@@ -267,4 +277,30 @@ figcaption {
 
 .form:valid .button-submit {
     background-color: #05c46b;
+}
+
+.login {
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    background-color: #dc6400;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5rem 1rem;
+    font-size: 24px;
+    box-shadow: 0 0 5px #202020;
+}
+
+.login:not(.login-expanded):hover {
+    background-color: #d3d3d3;
+    color: #dc6400;
+    cursor: pointer;
+}
+
+.login-expanded {
+    background-color: #404040;
+    border-color: #dc6400;
+    border-style: solid;
+    border-width: 0 0 5px 5px;
 }

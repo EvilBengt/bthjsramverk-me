@@ -1,11 +1,10 @@
-const baseUrl = "localhost:1337";
+const baseUrl = "http://localhost:1337";
 
 const go = (method) => (endpoint, body, headers) => (success, fail) => {
-    fetch({
+    fetch(baseUrl + endpoint, {
         method: method,
-        url: baseUrl + endpoint,
         headers: headers,
-        body: body
+        body: asFormUrlEncoded(body)
     }).then(data => {
         if (success) {
             success(data);
@@ -17,11 +16,16 @@ const go = (method) => (endpoint, body, headers) => (success, fail) => {
     })
 };
 
+const asFormUrlEncoded = obj => Object.keys(obj).map(k =>
+    `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`).join('&');
+
 const api = {
     get: go("GET"),
     post: go("POST"),
     put: go("PUT"),
-    delete: go("DELETE")
+    delete: go("DELETE"),
+
+    token: undefined
 };
 
 export default api;

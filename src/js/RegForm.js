@@ -6,6 +6,9 @@ class RegForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            with: (update) => {
+                return Object.assign(this.state, update);
+            },
             name: "",
             email: "",
             password: "",
@@ -28,27 +31,36 @@ class RegForm extends React.Component {
                             Namn<br/>
                             <input className="input" type="text" name="name" required
                                 onBlur={ e => e.target.classList.add("edited") }
-                                onChange={ e => this.setState(withProp(
-                                    this.state, "name", e.target.value
-                                )) }
+                                onChange={ e => this.setState(this.state.with({
+                                    name: e.target.value
+                                })) }
                             />
                         </label>
                         <label className="input-label">
                             Epost<br/>
                             <input className="input" type="email" name="email" required
                                 onBlur={ e => e.target.classList.add("edited") }
+                                onChange={ e => this.setState(this.state.with({
+                                    email: e.target.value
+                                })) }
                             />
                         </label>
                         <label className="input-label">
                             Lösenord<br/>
                             <input className="input" type="password" name="password" required
                                 onBlur={ e => e.target.classList.add("edited") }
+                                onChange={ e => this.setState(this.state.with({
+                                    password: e.target.value
+                                })) }
                             />
                         </label>
                         <label className="input-label">
                             Födelsedatum<br/>
                             <DatePicker className="input" required name="birthdate"
                                 onBlur={ e => e.target.classList.add("edited") }
+                                onChange={ e => this.setState(this.state.with({
+                                    birthdate: e.target.value
+                                })) }
                             />
                         </label>
                         <div className="form-footer">
@@ -63,16 +75,15 @@ class RegForm extends React.Component {
     }
 
     submit() {
-        api.post("/register", this.state);
+        api.post("/register", {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            birthdate: this.state.birthdate
+        }, {
+            "Content-Type": "application/x-www-form-urlencoded"
+        })();
     }
-}
-
-function withProp(object, key, value) {
-    const copy = Object.assign({}, object);
-
-    copy[key] = value;
-
-    return copy;
 }
 
 export default RegForm;

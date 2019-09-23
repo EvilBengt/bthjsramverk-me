@@ -4,11 +4,13 @@ import logo from "../img/logo9090.png"
 import Home from "./Home";
 import Reports from "./Reports";
 import RegForm from "./RegForm";
+import Login from "./Login";
 
 function App() {
     return (
         <Router>
             <Aside />
+            <Login />
 
             <Route exact path="/" component={Home} />
             <Route path="/reports/" component={Reports} />
