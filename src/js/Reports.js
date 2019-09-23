@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import ReportEditor from "./ReportsEditor";
 
 function Reports() {
     return (
@@ -8,6 +9,7 @@ function Reports() {
             <main className="main-content">
                 <Route exact path="/reports" component={Index} />
                 <Route path="/reports/week" component={Weeks} />
+                <Route path="/reports/edit" component={ReportEditor} />
             </main>
         </Router>
     );
@@ -49,7 +51,7 @@ function Week({ match }) {
     }
 }
 
-class Readme extends Component {
+class Readme extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
