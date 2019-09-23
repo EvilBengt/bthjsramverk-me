@@ -1,4 +1,12 @@
-const baseUrl = "http://localhost:1337";
+const devBaseUrl = "http://localhost:1337";
+const prodBaseUrl = "https://api.jsramverk.evilbengt.me";
+let baseUrl;
+
+if (window.location.origin.includes("localhost")) {
+    baseUrl = devBaseUrl;
+} else {
+    baseUrl = prodBaseUrl;
+}
 
 const go = (method) => (endpoint, body, headers) => (success, fail) => {
     fetch(baseUrl + endpoint, {
