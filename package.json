@@ -31,5 +31,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  }
 }
