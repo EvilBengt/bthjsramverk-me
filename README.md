@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/EvilBengt/bthjsramverk-me.svg?branch=master)](https://travis-ci.org/EvilBengt/bthjsramverk-me)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/EvilBengt/bthjsramverk-me/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EvilBengt/bthjsramverk-me/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/EvilBengt/bthjsramverk-me/badges/build.png?b=master)](https://scrutinizer-ci.com/g/EvilBengt/bthjsramverk-me/build-status/master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
