@@ -17,6 +17,7 @@ before_install:
     - "mkdir geckodriver"
     - "tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C geckodriver"
     - "export PATH=$PATH:$PWD/geckodriver"
+    - npm install -g forever
 
 git:
     submodules: false
@@ -25,5 +26,8 @@ before_script:
     - npm install
 
 script:
-    - npm start &
+    - forever start -c "npm start" ./
     - npm test
+
+after_script:
+    - forever stopall
