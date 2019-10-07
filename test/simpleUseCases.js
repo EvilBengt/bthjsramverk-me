@@ -15,7 +15,7 @@ test.describe("Simple use-cases", function () {
         done();
     });
     test.afterEach(function (done) {
-        //browser.quit();
+        browser.quit();
         done();
     });
 
