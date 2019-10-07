@@ -9,7 +9,6 @@ test.describe("Simple use-cases", function () {
     test.beforeEach(function (done) {
         this.timeout(20000);
         browser = new webdriver.Builder()
-            .usingServer()
             .withCapabilities(webdriver.Capabilities.firefox())
             .build();
 
