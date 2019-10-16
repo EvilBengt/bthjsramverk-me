@@ -335,7 +335,6 @@ figcaption {
     grid-template:
         " title  messages margin" auto
         "______  messages margin" 1fr
-        "  form  messages margin" auto
         "footer  footer   margin" auto  / auto auto 1fr;
     height: 100%;
 }
@@ -347,10 +346,6 @@ h1.chat-title {
 
 .chat-form {
     display: contents;
-}
-
-.chat-input-name {
-    grid-area: form;
 }
 
 .chat-input-footer {
@@ -376,8 +371,9 @@ h1.chat-title {
 .chat-messages {
     grid-area: messages;
     height: 100%;
-    overflow-y: auto;
     padding: 0 1rem;
+    overflow-y: auto;
+    max-height: 50rem;
 }
 
 .chat-message {
@@ -387,6 +383,11 @@ h1.chat-title {
     border-radius: 0.5rem;
     margin-bottom: 1rem;
     max-width: 30rem;
+}
+
+.is-me {
+    border-left: 5px solid #dc6400;
+    border-right: 5px solid #dc6400;
 }
 
 .chat-message-head {
@@ -399,6 +400,7 @@ h1.chat-title {
 
 .chat-message-time {
     float: right;
+    font-family: Oswald, sans-serif;
     font-size: 0.8rem;
     font-style: italic;
 }
