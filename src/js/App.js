@@ -5,6 +5,7 @@ import Home from "./Home";
 import Reports from "./Reports";
 import RegForm from "./RegForm";
 import Login from "./Login";
+import Chat from "./Chat";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/reports/" component={Reports} />
             <Route path="/register/" component={RegForm} />
+            <Route path="/chat/" component={Chat} />
 
             <Footer />
         </Router>
@@ -39,6 +41,7 @@ function Aside() {
                     <Link to="/reports/edit">Administrera</Link>
                 </div>
                 <Link to="/register">Registrera</Link>
+                <Link to="/chat">Chatt</Link>
             </nav>
         </aside>
     );
