@@ -1,8 +1,8 @@
 import React from "react";
 import io from "socket.io-client";
 
-const devSocketUrl = "http://localhost:8300";
-const prodSocketUrl = "https://chat.jsramverk.evilbengt.me:8300";
+const devSocketUrl = "http://localhost";
+const prodSocketUrl = "https://chat.jsramverk.evilbengt.me";
 let socketUrl;
 
 if (window.location.origin.includes("localhost")) {
