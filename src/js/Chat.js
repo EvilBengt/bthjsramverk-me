@@ -1,7 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import io from "socket.io-client";
+import ChatMessage from "./ChatMessage";
+import SavedMessages from "./SavedMessages";
 
-const devSocketUrl = "http://localhost";
+const devSocketUrl = "http://localhost:8300";
 const prodSocketUrl = "https://chat.jsramverk.evilbengt.me";
 let socketUrl;
 
@@ -11,8 +14,17 @@ if (window.location.origin.includes("localhost")) {
     socketUrl = prodSocketUrl;
 }
 
+function Chat() {
+    return (
+        <Router>
+            <Route exact path="/chat/" component={ ChatWindow } />
+            <Route path="/chat/saved" component={ SavedMessages } />
+        </Router>
+    )
+}
 
-class Chat extends React.Component {
+
+class ChatWindow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -106,6 +118,9 @@ class Chat extends React.Component {
                             <button type="submit" className="button button-submit chat-submit">
                                 Skicka
                             </button>
+                            <p>
+                                Klicka på ett meddelande för att spara på servern.
+                            </p>
                         </div>
                     </form>
                     <ul className="chat-messages">
@@ -117,6 +132,11 @@ class Chat extends React.Component {
                                         time={ message.time }
                                         body={ message.body }
                                         isMe={ message.nick === this.state.nick }
+                                        saveable
+                                        onClick={ e => {
+                                            e.preventDefault();
+                                            this.saveMessage(message);
+                                        } }
                                     />
                                 );
                             } else {
@@ -154,22 +174,10 @@ class Chat extends React.Component {
             messages: newMessages
         }));
     }
-}
 
-function ChatMessage(props) {
-    return (
-        <li className={ "chat-message" + (props.isMe ? " is-me" : "") }>
-            <span className="chat-message-head">
-                { props.nick }
-                <span className="chat-message-time">
-                    { props.time }
-                </span>
-            </span>
-            <p className="chat-message-body">
-                { props.body }
-            </p>
-        </li>
-    );
+    saveMessage(message) {
+        this.socket.emit("saveMessage", message);
+    }
 }
 
 function Notice(props) {

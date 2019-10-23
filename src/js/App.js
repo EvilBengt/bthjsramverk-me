@@ -42,6 +42,9 @@ function Aside() {
                 </div>
                 <Link to="/register">Registrera</Link>
                 <Link to="/chat">Chatt</Link>
+                <div className="sub-nav">
+                    <Link to="/chat/saved">Sparade meddelanden</Link>
+                </div>
             </nav>
         </aside>
     );
