@@ -1,6 +1,6 @@
 {
   "name": "me",
-  "version": "4.0.0",
+  "version": "6.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.9.0",
